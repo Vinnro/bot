@@ -6,9 +6,9 @@ import (
 )
 
 func (c *ComRout) HandleBack(inputMessage *tgbotapi.Message) {
-	
-	c.popState(inputMessage.Chat.ID)
-	previousState := c.getState(inputMessage.Chat.ID)
+
+	c.PopState(inputMessage.Chat.ID)
+	previousState := c.GetState(inputMessage.Chat.ID)
 	if previousState == "" {
 		msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Нет предыдущего раздела.")
 		if _, err := c.bot.Send(msg); err != nil {

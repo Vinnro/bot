@@ -1,14 +1,15 @@
 package main
 
 import (
-	"os"
 	"MephiBot/internal/app/commands"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"log"
+	"os"
 )
 
 func main() {
-	token := os.Getenv("7367170841:AAEZbMzt1rriFnZsspNx49TyYkQ0434uBwQ")
+	token := os.Getenv("BOT_TOKEN")
+	ChatID := int64(5584877461)
 	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		log.Panic(err)
@@ -21,11 +22,19 @@ func main() {
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
 	updates := bot.GetUpdatesChan(u)
-
 	commander := commands.NewComRout(bot)
 
 	for update := range updates {
 		if update.Message != nil {
+			prev := commander.GetState(update.Message.Chat.ID)
+			if prev == "contact" {
+				commander.PopState(update.Message.Chat.ID)
+				msg := tgbotapi.NewMessage(ChatID, update.Message.Text+"\n"+"От пользователя: "+"@"+update.Message.From.UserName)
+				bot.Send(msg)
+				msg2 := tgbotapi.NewMessage(update.Message.Chat.ID, "Ваше сообщение отправлено. Вернитесь на главную страницу /start")
+				bot.Send(msg2)
+				continue
+			}
 			switch update.Message.Text {
 			case "/start":
 				commander.Start(update.Message)
@@ -33,6 +42,8 @@ func main() {
 				commander.Help(update.Message)
 			case "/list":
 				commander.List(update.Message)
+			case "/contact":
+				commander.ContactHandler(update.Message)
 			default:
 				commander.Default(update.Message)
 			}
@@ -44,6 +55,8 @@ func main() {
 				log.Printf("Ошибка при отправке CallbackQuery: %v", err)
 			}
 			switch update.CallbackQuery.Data {
+			case "contact":
+				commander.ContactHandler(update.CallbackQuery.Message)
 			case "started":
 				commander.Start(update.CallbackQuery.Message)
 			case "list":

@@ -6,7 +6,7 @@ import (
 )
 
 func (c *ComRout) List(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "list")
+	c.PushState(inputMessage.Chat.ID, "list")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Выберите нужные вам позиции: ")
 	msg.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{

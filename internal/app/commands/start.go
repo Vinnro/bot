@@ -5,7 +5,7 @@ import (
 )
 
 func (c *ComRout) Start(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "start")
+	c.PushState(inputMessage.Chat.ID, "start")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Добро пожаловать в архив ИИКС мяу мяу МИФИ\n"+
 		"Команды, которые тебе доступны:\n"+
 		"👉 помощь - список всех доступных команд.\n"+
@@ -18,7 +18,6 @@ func (c *ComRout) Start(inputMessage *tgbotapi.Message) {
 			{
 				tgbotapi.NewInlineKeyboardButtonData("Помощь", "help"),
 				tgbotapi.NewInlineKeyboardButtonData("Список", "list"),
-				tgbotapi.NewInlineKeyboardButtonData("Поиск", "search"),
 				tgbotapi.NewInlineKeyboardButtonData("Связь", "contact"),
 			},
 		},

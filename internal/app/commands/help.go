@@ -6,7 +6,7 @@ import (
 )
 
 func (c *ComRout) Help(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "helper")
+	c.PushState(inputMessage.Chat.ID, "helper")
 	if states, exists := c.userStates[inputMessage.Chat.ID]; exists {
 		log.Printf("Help: ID чата: %d, текущий стек состояний: %v", inputMessage.Chat.ID, states)
 	} else {

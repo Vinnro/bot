@@ -6,7 +6,7 @@ import (
 )
 
 func (c *ComRout) Vtoroi_kurs(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "second")
+	c.PushState(inputMessage.Chat.ID, "second")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Выберите нужные вам позиции: ")
 	msg.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
@@ -25,7 +25,7 @@ func (c *ComRout) Vtoroi_kurs(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Tri_sem(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "3_sem")
+	c.PushState(inputMessage.Chat.ID, "3_sem")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Выберите нужные вам позиции: ")
 	msg.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
@@ -45,7 +45,7 @@ func (c *ComRout) Tri_sem(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Tri_sem_2022(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "3_sem_2022")
+	c.PushState(inputMessage.Chat.ID, "3_sem_2022")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Выберите нужные вам позиции: ")
 	msg.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
@@ -75,7 +75,7 @@ func (c *ComRout) Tri_sem_2022(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Kiir_telyak(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "Kiir_telyak")
+	c.PushState(inputMessage.Chat.ID, "Kiir_telyak")
 	msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Выберите нужные вам позиции: ")
 	msg.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
@@ -99,7 +99,7 @@ func (c *ComRout) Kiir_telyak(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Dopusk(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "dopusk")
+	c.PushState(inputMessage.Chat.ID, "dopusk")
 	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/home/kailo/Kom.webp"))
 	photo.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
 		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
@@ -114,7 +114,7 @@ func (c *ComRout) Dopusk(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Kr1(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "kr1")
+	c.PushState(inputMessage.Chat.ID, "kr1")
 	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr1_image.webp"))
 	if _, err := c.bot.Send(photo); err != nil {
 		log.Printf("Ошибка при отправке сообщения: %v", err)
@@ -122,7 +122,7 @@ func (c *ComRout) Kr1(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Kr2(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "kr2")
+	c.PushState(inputMessage.Chat.ID, "kr2")
 	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr2_image.webp"))
 	if _, err := c.bot.Send(photo); err != nil {
 		log.Printf("Ошибка при отправке сообщения: %v", err)
@@ -130,7 +130,7 @@ func (c *ComRout) Kr2(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Kr3(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "kr3")
+	c.PushState(inputMessage.Chat.ID, "kr3")
 	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr3_image.webp"))
 	if _, err := c.bot.Send(photo); err != nil {
 		log.Printf("Ошибка при отправке сообщения: %v", err)
@@ -138,7 +138,7 @@ func (c *ComRout) Kr3(inputMessage *tgbotapi.Message) {
 }
 
 func (c *ComRout) Kr4(inputMessage *tgbotapi.Message) {
-	c.pushState(inputMessage.Chat.ID, "kr4")
+	c.PushState(inputMessage.Chat.ID, "kr4")
 	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr4_image.webp"))
 	if _, err := c.bot.Send(photo); err != nil {
 		log.Printf("Ошибка при отправке сообщения: %v", err)
