@@ -73,8 +73,8 @@ func main() {
 				commander.Tri_sem_2022(update.CallbackQuery.Message)
 			case "Kiir_Tel":
 				commander.Kiir_telyak(update.CallbackQuery.Message)
-			case "Dopusk":
-				commander.Dopusk(update.CallbackQuery.Message)
+				//case "Dopusk":
+				//	commander.Dopusk(update.CallbackQuery.Message)
 			}
 		}
 	}

@@ -98,49 +98,49 @@ func (c *ComRout) Kiir_telyak(inputMessage *tgbotapi.Message) {
 	}
 }
 
-func (c *ComRout) Dopusk(inputMessage *tgbotapi.Message) {
-	c.PushState(inputMessage.Chat.ID, "dopusk")
-	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/home/kailo/Kom.webp"))
-	photo.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
-		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
-			{
-				tgbotapi.NewInlineKeyboardButtonData("Назад", "back"),
-			},
-		},
-	}
-	if _, err := c.bot.Send(photo); err != nil {
-		log.Printf("Ошибка при отправке сообщения: %v", err)
-	}
-}
+//func (c *ComRout) Dopusk(inputMessage *tgbotapi.Message) {
+//	c.PushState(inputMessage.Chat.ID, "dopusk")
+//	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/home/kailo/Kom.webp"))
+//	photo.ReplyMarkup = tgbotapi.InlineKeyboardMarkup{
+//		InlineKeyboard: [][]tgbotapi.InlineKeyboardButton{
+//			{
+//				tgbotapi.NewInlineKeyboardButtonData("Назад", "back"),
+//			},
+//		},
+//	}
+//	if _, err := c.bot.Send(photo); err != nil {
+//		log.Printf("Ошибка при отправке сообщения: %v", err)
+//	}
+//}
 
-func (c *ComRout) Kr1(inputMessage *tgbotapi.Message) {
-	c.PushState(inputMessage.Chat.ID, "kr1")
-	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr1_image.webp"))
-	if _, err := c.bot.Send(photo); err != nil {
-		log.Printf("Ошибка при отправке сообщения: %v", err)
-	}
-}
-
-func (c *ComRout) Kr2(inputMessage *tgbotapi.Message) {
-	c.PushState(inputMessage.Chat.ID, "kr2")
-	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr2_image.webp"))
-	if _, err := c.bot.Send(photo); err != nil {
-		log.Printf("Ошибка при отправке сообщения: %v", err)
-	}
-}
-
-func (c *ComRout) Kr3(inputMessage *tgbotapi.Message) {
-	c.PushState(inputMessage.Chat.ID, "kr3")
-	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr3_image.webp"))
-	if _, err := c.bot.Send(photo); err != nil {
-		log.Printf("Ошибка при отправке сообщения: %v", err)
-	}
-}
-
-func (c *ComRout) Kr4(inputMessage *tgbotapi.Message) {
-	c.PushState(inputMessage.Chat.ID, "kr4")
-	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr4_image.webp"))
-	if _, err := c.bot.Send(photo); err != nil {
-		log.Printf("Ошибка при отправке сообщения: %v", err)
-	}
-}
+//func (c *ComRout) Kr1(inputMessage *tgbotapi.Message) {
+//	c.PushState(inputMessage.Chat.ID, "kr1")
+//	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr1_image.webp"))
+//	if _, err := c.bot.Send(photo); err != nil {
+//		log.Printf("Ошибка при отправке сообщения: %v", err)
+//	}
+//}
+//
+//func (c *ComRout) Kr2(inputMessage *tgbotapi.Message) {
+//	c.PushState(inputMessage.Chat.ID, "kr2")
+//	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr2_image.webp"))
+//	if _, err := c.bot.Send(photo); err != nil {
+//		log.Printf("Ошибка при отправке сообщения: %v", err)
+//	}
+//}
+//
+//func (c *ComRout) Kr3(inputMessage *tgbotapi.Message) {
+//	c.PushState(inputMessage.Chat.ID, "kr3")
+//	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr3_image.webp"))
+//	if _, err := c.bot.Send(photo); err != nil {
+//		log.Printf("Ошибка при отправке сообщения: %v", err)
+//	}
+//}
+//
+//func (c *ComRout) Kr4(inputMessage *tgbotapi.Message) {
+//	c.PushState(inputMessage.Chat.ID, "kr4")
+//	photo := tgbotapi.NewPhoto(inputMessage.Chat.ID, tgbotapi.FilePath("/path/to/Kr4_image.webp"))
+//	if _, err := c.bot.Send(photo); err != nil {
+//		log.Printf("Ошибка при отправке сообщения: %v", err)
+//	}
+//}

@@ -35,16 +35,16 @@ func (c *ComRout) HandleBack(inputMessage *tgbotapi.Message) {
 		c.Tri_sem_2022(inputMessage)
 	case "Kiir_telyak":
 		c.Kiir_telyak(inputMessage)
-	case "dopusk":
-		c.Dopusk(inputMessage)
-	case "kr1":
-		c.Kr1(inputMessage)
-	case "kr2":
-		c.Kr2(inputMessage)
-	case "kr3":
-		c.Kr3(inputMessage)
-	case "kr4":
-		c.Kr4(inputMessage)
+	//case "dopusk":
+	//	c.Dopusk(inputMessage)
+	//case "kr1":
+	//	c.Kr1(inputMessage)
+	//case "kr2":
+	//	c.Kr2(inputMessage)
+	//case "kr3":
+	//	c.Kr3(inputMessage)
+	//case "kr4":
+	//	c.Kr4(inputMessage)
 	default:
 		msg := tgbotapi.NewMessage(inputMessage.Chat.ID, "Неизвестное состояние.")
 		if _, err := c.bot.Send(msg); err != nil {
