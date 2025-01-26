@@ -8,9 +8,8 @@ import (
 )
 
 func main() {
-	token := os.Getenv("BOT_TOKEN")
 	ChatID := int64(5584877461)
-	bot, err := tgbotapi.NewBotAPI(token)
+	bot, err := tgbotapi.NewBotAPI(BOT_TOKEN)
 	if err != nil {
 		log.Panic(err)
 	}
