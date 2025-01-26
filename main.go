@@ -13,7 +13,7 @@ func main() {
 	if token == "" {
 		log.Fatal("Токен не задан в переменных окружения") // Если токен пуст, завершаем с ошибкой
 	}
-	bot, err := tgbotapi.NewBotAPI(BOT_TOKEN)
+	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		log.Panic(err)
 	}
