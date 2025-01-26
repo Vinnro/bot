@@ -9,6 +9,10 @@ import (
 
 func main() {
 	ChatID := int64(5584877461)
+	token := os.Getenv("BOT_TOKEN") // Получаем токен из переменной окружения
+	if token == "" {
+		log.Fatal("Токен не задан в переменных окружения") // Если токен пуст, завершаем с ошибкой
+	}
 	bot, err := tgbotapi.NewBotAPI(BOT_TOKEN)
 	if err != nil {
 		log.Panic(err)
