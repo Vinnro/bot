@@ -1,13 +1,15 @@
 package main
 
 import (
+	"os"
 	"MephiBot/internal/app/commands"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"log"
 )
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("7367170841:AAEZbMzt1rriFnZsspNx49TyYkQ0434uBwQ")
+	token := os.Getenv("7367170841:AAEZbMzt1rriFnZsspNx49TyYkQ0434uBwQ")
+	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
 		log.Panic(err)
 	}
