@@ -5,9 +5,18 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"log"
 	"os"
+	"net/nttp"
 )
 
 func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "Bot is running!")
+	})
+
+	// Порт Replit задаёт автоматически через переменную окружения PORT
+	port := "8080" // Обычно Replit перенаправляет 8080 на внешний адрес
+	log.Printf("Starting server on port %s...\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 	ChatID := int64(5584877461)
 	token := os.Getenv("BOT_TOKEN") // Получаем токен из переменной окружения
 	if token == "" {
